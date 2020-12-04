@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BrandX.Models.FinalsData>
+
+@{
+    ViewData["Title"] = "Finals";
+}
+
+    <h2>Finals</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quiz1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quiz2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quiz3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Assignment1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Assignment2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Assignment3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Exam)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quiz1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quiz2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quiz3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Assignment1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Assignment2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Assignment3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Exam)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-area="" asp-controller="StudentInfoes" asp-action="Index">Back</a>
+    </div>

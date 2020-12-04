@@ -1,0 +1,66 @@
+﻿@model BrandX.Models.MidtermData
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create Midterm</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quiz1" class="control-label"></label>
+                <input asp-for="Quiz1" class="form-control" />
+                <span asp-validation-for="Quiz1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quiz2" class="control-label"></label>
+                <input asp-for="Quiz2" class="form-control" />
+                <span asp-validation-for="Quiz2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quiz3" class="control-label"></label>
+                <input asp-for="Quiz3" class="form-control" />
+                <span asp-validation-for="Quiz3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assignment1" class="control-label"></label>
+                <input asp-for="Assignment1" class="form-control" />
+                <span asp-validation-for="Assignment1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assignment2" class="control-label"></label>
+                <input asp-for="Assignment2" class="form-control" />
+                <span asp-validation-for="Assignment2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assignment3" class="control-label"></label>
+                <input asp-for="Assignment3" class="form-control" />
+                <span asp-validation-for="Assignment3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam" class="control-label"></label>
+                <input asp-for="Exam" class="form-control" />
+                <span asp-validation-for="Exam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="HomePage">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

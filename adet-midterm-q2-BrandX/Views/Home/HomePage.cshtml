@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #Cancer {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+            /* Change the link color on hover */
+            li a:hover {
+                background-color: #555;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <div align='center'>
+        <div class="jumbotron">
+            <h2>ADMIN</h2>
+
+            <ul id="Cancer">
+                <li><a asp-controller="StudentInfoes" asp-action="Create">Create Student</a></li>
+                <li><a asp-controller="PrelimDatas" asp-action="Create">Create Prelim</a></li>
+                <li><a asp-controller="MidtermDatas" asp-action="Create">Create Midterm</a></li>
+                <li><a asp-controller="PrefinalDatas" asp-action="Create">Create Prefinal</a></li>
+                <li><a asp-controller="FinalsDatas" asp-action="Create">Create Finals</a></li>
+            </ul>
+        </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BrandX.Models.StudentInfo>
+
+@{
+    ViewData["Title"] = "Student Info";
+}
+<div class="jumbotron">
+
+    <h2>Student Info</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Course)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContactNo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Course)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContactNo)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div align='center'>
+    <a class="btn btn-info" asp-area="" asp-controller="PrelimDatas" asp-action="Index">Prelim</a> |
+    <a class="btn btn-info" asp-area="" asp-controller="MidtermDatas" asp-action="Index">Midterm</a> |
+    <a class="btn btn-info" asp-area="" asp-controller="PrefinalDatas" asp-action="Index">Prefinal</a> |
+    <a class="btn btn-info" asp-area="" asp-controller="FinalsDatas" asp-action="Index">Prelim</a>
+
+</div>
